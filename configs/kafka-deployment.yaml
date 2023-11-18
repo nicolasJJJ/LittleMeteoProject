@@ -1,26 +1,26 @@
 apiVersion: apps/v1
-kind: Deployment                # ressource types
+kind: Deployment
 metadata:
   name: kafka
 spec:
-  replicas: 1                   # Number of replicas (instances)
+  replicas: 1
   selector:
     matchLabels:
-      app: kafka                # Sélection to find K8s pods
-  template:                     # Template for pods
+      app: kafka
+  template:
     metadata:
       labels:
-        app: kafka              # labels assigned to pods
+        app: kafka
     spec:
-      containers:               
-      - name: kafka             
-        image: confluentinc/cp-kafka:latest # image used
+      containers:
+      - name: kafka
+        image: confluentinc/cp-kafka:latest
         ports:
-        - containerPort: 9092   
-        environment:            # kafka env vars
+        - containerPort: 9092
+        environment:
         - name: KAFKA_ZOOKEEPER_CONNECT
-          value: "zookeeper:2181" 
+          value: "zookeeper"
         - name: KAFKA_ADVERTISED_LISTENERS
-          value: "PLAINTEXT://kafka:9092" 
+          value: "PLAINTEXT://kafka:9092"
         - name: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR
-          value: "1"           
+          value: "1"
