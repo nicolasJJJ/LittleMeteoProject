@@ -3,11 +3,6 @@ cp-kafka:
   brokers: 3
   # Ajoute ici d'autres configurations spécifiques à Kafka si nécessaire
 
-# Zookeeper est généralement inclus avec Kafka, mais tu peux personnaliser sa configuration ici
-cp-zookeeper:
-  servers: 3
-  # Autres configurations pour Zookeeper
-
 # Configuration de Schema Registry
 cp-schema-registry:
   enabled: true
