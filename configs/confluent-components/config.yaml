@@ -1,0 +1,27 @@
+# Configuration de Kafka
+cp-kafka:
+  brokers: 5
+  # Ajoute ici d'autres configurations spécifiques à Kafka si nécessaire
+
+# Zookeeper est généralement inclus avec Kafka, mais personnaliser sa configuration ici
+cp-zookeeper:
+  servers: 3
+  # Autres configurations pour Zookeeper
+
+# Configuration de Schema Registry
+cp-schema-registry:
+  enabled: true
+  # Configurations spécifiques au Schema Registry
+
+# Configuration de ksqlDB (KafkaSQL)
+cp-ksql-server:
+  enabled: true
+  # Configurations spécifiques à ksqlDB
+
+  # Par exemple, pour lier ksqlDB au cluster Kafka
+  ksql:
+    ksql:
+      bootstrap.servers: "cp-kafka:9092"
+    # Autres configurations pour ksqlDB
+
+#Possibilité d'ajouter des configurations pour d'autres composants si nécessaire, comme Kafka Connect
