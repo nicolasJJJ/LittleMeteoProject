@@ -18,9 +18,11 @@ The cargo directory containing the kafka producer
 ## Configs folder
 Contains configs read by microK8S to start the services.
 
+```
 microk8s.kubectl apply -f zookeeper-deployment.yaml
 microk8s.kubectl apply -f kafka-deployment.yaml
 microk8s.kubectl apply -f zookeeper-service.yaml
 microk8s.kubectl apply -f kafka-service.yaml
+```
 
 maybe i'll start with a bash file that will make every steps.
